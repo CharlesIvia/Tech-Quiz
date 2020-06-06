@@ -157,3 +157,20 @@ function hideMessage() {
     message.textContent = "";
   }, 3000);
 }
+
+//Clear the correct answwer
+
+function clearCorrect() {
+    setTimeout(() => {
+      correct.innerHTML = "";
+    }, 3000);
+  }
+  
+  //Clear if user got it right
+  
+  function clearIfCorrect() {
+    setTimeout(() => {
+      correct.innerHTML = "";
+    }, 1200);
+  }
+  
