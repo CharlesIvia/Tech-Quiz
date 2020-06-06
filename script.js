@@ -111,3 +111,10 @@ function loadOptions(ques) {
     options.appendChild(li);
   });
 }
+
+//Increment and update score
+
+function incrementScore() {
+  scoreValue++;
+  score.textContent = scoreValue;
+}
