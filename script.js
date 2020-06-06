@@ -74,3 +74,27 @@ function onOptionSelect(e) {
     loadNextQuestion();
   }
 }
+
+//Load next questiom
+
+function loadNextQuestion() {
+  let questionDisplayed = question.textContent;
+  let questionArray = Object.keys(questions);
+  let currentQuestionIndex = questionArray.indexOf(questionDisplayed);
+  let nextIndex = currentQuestionIndex + 1;
+  if (nextIndex < questionArray.length) {
+    let nextQuestion = questionArray[nextIndex];
+    question.textContent = nextQuestion;
+    loadOptions(nextQuestion);
+  } else {
+    //Load first question and final score
+    let lastScore = scoreValue;
+    resetScore();
+    options.innerHTML = "";
+    loadFirstQuestion();
+    let messageString =
+      "You scored:" + `${lastScore}` + "/" + `${questionsArray.length}`;
+    message.textContent = messageString;
+    hideMessage();
+  }
+}
