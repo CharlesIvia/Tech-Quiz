@@ -93,8 +93,9 @@ function loadNextQuestion() {
     options.innerHTML = "";
     loadFirstQuestion();
     let messageString =
-      "You scored:" + `${lastScore}` + "/" + `${questionsArray.length}`;
+      "You scored:" + `${lastScore}` + "/" + `${questionArray.length}`;
     message.textContent = messageString;
+    console.log(messageString);
     hideMessage();
   }
 }
