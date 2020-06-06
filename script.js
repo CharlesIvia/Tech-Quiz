@@ -90,7 +90,13 @@ function onOptionSelect(e) {
 function gotIt() {
   correct.innerHTML = "Correct!";
 }
+//Display correct if wrong answer
 
+function correctOne() {
+    let questionDis = question.textContent;
+    let correctAnw = questions[questionDis][1];
+    correct.innerHTML = `The correct answer is: ${correctAnw}`;
+  }
 
 //Load next question
 function loadNextQuestion() {
