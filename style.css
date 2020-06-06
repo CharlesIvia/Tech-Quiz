@@ -12,7 +12,7 @@ header {
 body {
   margin: 0;
   font-size: 18px;
-  background: rgb(32,33,36);
+  background: rgb(32, 33, 36);
   font-family: "Roboto Mono", monospace;
   height: 100vh;
   overflow: hidden;
@@ -35,9 +35,14 @@ main {
 .score-container {
   width: 100px;
   padding: 5px;
-  margin-left: auto;
+  margin: auto;
   background: #fff1a9;
-  display: none;
+  display: flex;
+  border-radius: 2.5px;
+}
+
+.score:active {
+  background-color: green;
 }
 
 .question {
