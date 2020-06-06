@@ -98,3 +98,16 @@ function loadNextQuestion() {
     hideMessage();
   }
 }
+
+//Load options for each question
+
+function loadOptions(ques) {
+  let quesOptions = questions[ques][0];
+
+  options.innerHTML = "";
+  quesOptions.forEach((item) => {
+    let li = document.createElement("li");
+    li.textContent = item;
+    options.appendChild(li);
+  });
+}
