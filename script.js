@@ -36,6 +36,7 @@ const questions = {
     ],
     "It returns a reference to a variable in its parent scope",
   ],
+  "6. HTML and CSS are not programming languages?": [["True", "False"], "True"],
 };
 
 let scoreValue = 0;
