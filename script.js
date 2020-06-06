@@ -118,3 +118,17 @@ function incrementScore() {
   scoreValue++;
   score.textContent = scoreValue;
 }
+
+//reset score
+
+function resetScore() {
+  scoreValue = 0;
+  score.textContent = scoreValue;
+}
+
+//hide message
+function hideMessage() {
+  setTimeout(() => {
+    message.textContent = "";
+  }, 3000);
+}
