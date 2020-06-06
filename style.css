@@ -9,3 +9,24 @@ body {
   background: linear-gradient(to right, #7bc6cc, #be93c5);
   font-family: "Roboto Mono", monospace;
 }
+
+main {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    width: 650px;
+    padding: 1rem;
+    position: relative;
+}
+
+.score-container {
+    width: 100px;
+    padding: 5px;
+    margin-left: auto;
+    background: #fff1a9;
+    display: none;
+}
