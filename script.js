@@ -6,15 +6,15 @@ const score = document.querySelector(".score");
 const message = document.querySelector(".message");
 
 const questions = {
-  "1. Which of the following is used to request and load data Asynchronously?": [
+  "1.Which of the following is used to request and load data Asynchronously?": [
     ["SQL", "Ajax", "JSON", "Bootstrap"],
     "Ajax",
   ],
-  "2. Which of the following is not an inbuilt array function in JavaScript?": [
+  "2.Which of the following is not an inbuilt array function in JavaScript?": [
     ["filter", "forEach", "map", "set"],
     "set",
   ],
-  "3. You want to store an Array called 'items' to local storage. How will you convert it?": [
+  "3.You want to store an Array called 'items' to local storage. How will you convert it?": [
     [
       "JSON.stringify(items)",
       "items.indexOf()",
@@ -23,11 +23,11 @@ const questions = {
     ],
     "JSON.stringify(items)",
   ],
-  "4. Which property references the DOM object that dispatched an event?": [
+  "4.Which property references the DOM object that dispatched an event?": [
     ["self", "object", "target", "source"],
     "target",
   ],
-  "5. How does a function create a closure?": [
+  "5.How does a function create a closure?": [
     [
       "It reloads the document whenever the value changes",
       "It returns a reference to a variable in its parent scope",
@@ -36,7 +36,7 @@ const questions = {
     ],
     "It returns a reference to a variable in its parent scope",
   ],
-  "6. HTML and CSS are not programming languages?": [["True", "False"], "True"],
+  "6.HTML and CSS are not programming languages?": [["True", "False"], "True"],
 };
 
 let scoreValue = 0;
