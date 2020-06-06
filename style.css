@@ -68,10 +68,22 @@ main {
 }
 
 .message {
-    height: 25px;
-    text-align: center;
-    color: green;
-    font-weight: bold;
+  height: 25px;
+  text-align: center;
+  color: green;
+  font-weight: bold;
 }
 
+footer {
+  text-align: center;
+  font-size: 22px;
+}
 
+footer a {
+  text-decoration: none;
+  color: #36556d;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
