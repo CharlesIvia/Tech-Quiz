@@ -70,9 +70,13 @@ function onOptionSelect(e) {
   let correctAnswer = questions[questionDisplayed][1];
   if (optionSelected === correctAnswer) {
     incrementScore();
-    loadNextQuestion();
+    setTimeout(() => {
+      loadNextQuestion();
+    }, 1000);
   } else {
-    loadNextQuestion();
+    setTimeout(() => {
+      loadNextQuestion();
+    }, 1000);
   }
 }
 
@@ -90,7 +94,9 @@ function loadNextQuestion() {
   } else {
     //Load first question and final score
     let lastScore = scoreValue;
-    resetScore();
+    setTimeout(() => {
+      resetScore();
+    }, 3000);
     options.innerHTML = "";
     loadFirstQuestion();
     let messageString =
