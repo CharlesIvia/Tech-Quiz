@@ -5,6 +5,7 @@ const options = document.querySelector(".options");
 const score = document.querySelector(".score");
 const message = document.querySelector(".message");
 let correct = document.querySelector(".correct");
+let cor = document.querySelector(".cor");
 
 const questions = {
   "1.Which of the following is used to request and load data Asynchronously?": [
@@ -73,12 +74,16 @@ function onOptionSelect(e) {
     gotIt();
     clearIfCorrect();
     incrementScore();
+    styleCorrectIfCorrect();
+    clearStyle1();
     setTimeout(() => {
       loadNextQuestion();
     }, 1200);
   } else {
     correctOne();
     clearCorrect();
+    styleCorrectIfWrong();
+    clearStyle2();
     setTimeout(() => {
       loadNextQuestion();
     }, 3000);
@@ -90,13 +95,28 @@ function onOptionSelect(e) {
 function gotIt() {
   correct.innerHTML = "Correct!";
 }
-//Display correct if wrong answer
+
+//Style correct Answers components
+
+function styleCorrectIfCorrect() {
+  correct.style.background = "white";
+  correct.style.height = "10vh";
+  correct.style.color = "green";
+}
+function styleCorrectIfWrong() {
+  correct.style.background = "white";
+  correct.style.height = "10vh";
+  correct.style.color = "red";
+}
+
+//Display correct answer if answer is wrong
 
 function correctOne() {
-    let questionDis = question.textContent;
-    let correctAnw = questions[questionDis][1];
-    correct.innerHTML = `The correct answer is: ${correctAnw}`;
-  }
+  let questionDis = question.textContent;
+  let correctAnw = questions[questionDis][1];
+
+  correct.innerHTML = `The correct answer is: ${correctAnw}`;
+}
 
 //Load next question
 function loadNextQuestion() {
@@ -161,16 +181,15 @@ function hideMessage() {
 //Clear the correct answwer
 
 function clearCorrect() {
-    setTimeout(() => {
-      correct.innerHTML = "";
-    }, 3000);
-  }
-  
-  //Clear if user got it right
-  
-  function clearIfCorrect() {
-    setTimeout(() => {
-      correct.innerHTML = "";
-    }, 1200);
-  }
-  
+  setTimeout(() => {
+    correct.innerHTML = "";
+  }, 3000);
+}
+
+//Clear if user got it right
+
+function clearIfCorrect() {
+  setTimeout(() => {
+    correct.innerHTML = "";
+  }, 1200);
+}
