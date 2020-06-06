@@ -43,7 +43,7 @@ let scoreValue = 0;
 //Add Event Listener
 
 document.addEventListener("DOMContentLoaded", loadFirstQuestion);
-options.addEventListener("click");
+options.addEventListener("click", onOptionSelect);
 
 //Load first question and options on page load
 
@@ -57,4 +57,20 @@ function loadFirstQuestion() {
     li.textContent = item;
     options.appendChild(li);
   });
+}
+
+//Compare selected answer with corrent answer and ipdate score
+
+function onOptionSelect(e) {
+  let optionSelected = e.target.textContent;
+  let questionDisplayed =
+    e.target.parentElement.previousElementSibling.textContent;
+
+  let correctAnswer = questions[questionDisplayed][1];
+  if (optionSelected === correctAnswer) {
+    incrementScore();
+    loadNextQuestion();
+  } else {
+    loadNextQuestion();
+  }
 }
