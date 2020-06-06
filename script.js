@@ -4,6 +4,7 @@ const question = document.querySelector(".question");
 const options = document.querySelector(".options");
 const score = document.querySelector(".score");
 const message = document.querySelector(".message");
+let correct = document.querySelector(".correct");
 
 const questions = {
   "1.Which of the following is used to request and load data Asynchronously?": [
@@ -69,19 +70,29 @@ function onOptionSelect(e) {
 
   let correctAnswer = questions[questionDisplayed][1];
   if (optionSelected === correctAnswer) {
+    gotIt();
+    clearIfCorrect();
     incrementScore();
     setTimeout(() => {
       loadNextQuestion();
-    }, 1000);
+    }, 1200);
   } else {
+    correctOne();
+    clearCorrect();
     setTimeout(() => {
       loadNextQuestion();
-    }, 1000);
+    }, 3000);
   }
 }
 
-//Load next questiom
+//Approve answer
 
+function gotIt() {
+  correct.innerHTML = "Correct!";
+}
+
+
+//Load next question
 function loadNextQuestion() {
   let questionDisplayed = question.textContent;
   let questionArray = Object.keys(questions);
