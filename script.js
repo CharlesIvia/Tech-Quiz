@@ -39,3 +39,22 @@ const questions = {
 };
 
 let scoreValue = 0;
+
+//Add Event Listener
+
+document.addEventListener("DOMContentLoaded", loadFirstQuestion);
+options.addEventListener("click");
+
+//Load first question and options on page load
+
+function loadFirstQuestion() {
+  let firstQuestion = Object.keys(questions)[0];
+  question.textContent = firstQuestion;
+
+  let firstOptions = Object.values(questions)[0][0];
+  firstOptions.forEach((item) => {
+    let li = document.createElement("li");
+    li.textContent = item;
+    options.appendChild(li);
+  });
+}
