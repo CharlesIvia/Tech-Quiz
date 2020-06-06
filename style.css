@@ -6,13 +6,13 @@ header {
   text-align: center;
   margin-top: 3vh;
   font-size: 20px;
+  color: white;
 }
 
 body {
   margin: 0;
   font-size: 18px;
-  background: #be93c5;
-  background: linear-gradient(to right, #7bc6cc, #be93c5);
+  background: rgb(32,33,36);
   font-family: "Roboto Mono", monospace;
   height: 100vh;
   overflow: hidden;
@@ -49,7 +49,7 @@ main {
   align-items: center;
   border-radius: 2.5px;
   font-weight: 600;
-  padding: 10px 0 10px 5px;
+  padding: 10px 0 10px 10px;
 }
 
 .options {
@@ -84,7 +84,8 @@ main {
 
 footer {
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
+  color: lightblue;
 }
 
 footer a {
