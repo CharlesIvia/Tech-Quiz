@@ -321,7 +321,6 @@ function onOptionSelect(e) {
     gotIt();
     clearIfCorrect();
     incrementScore();
-    setInterval();
     countQuestions();
     styleCorrectIfCorrect();
     clearStyleIfCorrect();
@@ -441,6 +440,7 @@ function goBack() {
 }
 
 back.addEventListener("click", goBack);
+back.addEventListener("click", countQuestionsDownwards);
 
 //Skip question
 
@@ -492,5 +492,12 @@ function clearIfCorrect() {
 
 function countQuestions() {
   outofValue++;
+  outof.textContent = outofValue;
+}
+
+//Count downwards
+
+function countQuestionsDownwards() {
+  outofValue--;
   outof.textContent = outofValue;
 }
