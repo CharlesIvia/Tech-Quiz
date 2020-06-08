@@ -20,7 +20,7 @@ body {
 }
 
 main {
-  height: 70vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,4 +111,26 @@ footer a:hover {
   border-radius: 3px;
   margin-top: 20px;
   margin: 20px auto 0 auto;
+  padding: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+}
+
+.back,
+.skip {
+  font-size: 1rem;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 2.5px;
+  outline: none;
+  background: #cce8e5;
+  color: #516163;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
 }
