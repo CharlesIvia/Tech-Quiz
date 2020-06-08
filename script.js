@@ -96,10 +96,9 @@ function onOptionSelect(e) {
     clearStyleIfWrong();
     setTimeout(() => {
       loadNextQuestion();
-    }, 3000);
+    }, 2000);
     goBack();
     loadNextQuestion();
-    clearGoBack();
   }
 }
 
@@ -133,7 +132,7 @@ function clearStyleIfWrong() {
   setTimeout(() => {
     correct.style.background = "";
     correct.style.height = "";
-  }, 3000);
+  }, 2000);
 }
 //Display correct answer if answer is wrong
 
@@ -170,6 +169,19 @@ function loadNextQuestion() {
   }
 }
 
+//Load options for each question
+
+function loadOptions(ques) {
+  let quesOptions = questions[ques][0];
+
+  options.innerHTML = "";
+  quesOptions.forEach((item) => {
+    let li = document.createElement("li");
+    li.textContent = item;
+    options.appendChild(li);
+  });
+}
+
 //Go back
 
 function goBack() {
@@ -190,6 +202,7 @@ function goBack() {
 }
 
 back.addEventListener("click", goBack);
+
 //Skip question
 
 function skipQuestion() {
@@ -197,19 +210,6 @@ function skipQuestion() {
 }
 
 skipQuestion();
-
-//Load options for each question
-
-function loadOptions(ques) {
-  let quesOptions = questions[ques][0];
-
-  options.innerHTML = "";
-  quesOptions.forEach((item) => {
-    let li = document.createElement("li");
-    li.textContent = item;
-    options.appendChild(li);
-  });
-}
 
 //Increment and update score
 
@@ -237,7 +237,7 @@ function hideMessage() {
 function clearCorrect() {
   setTimeout(() => {
     correct.innerHTML = "";
-  }, 3000);
+  }, 2000);
 }
 
 //Clear if user got it right
@@ -246,10 +246,4 @@ function clearIfCorrect() {
   setTimeout(() => {
     correct.innerHTML = "";
   }, 1200);
-}
-
-function clearGoBack() {
-  setTimeout(() => {
-    back.style.display = "none";
-  }, 6000);
 }
