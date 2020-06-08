@@ -134,3 +134,9 @@ footer a:hover {
   letter-spacing: 1px;
   display: flex;
 }
+
+@media (max-width: 576px) {
+  .main-container {
+    width: 370px;
+  }
+}
