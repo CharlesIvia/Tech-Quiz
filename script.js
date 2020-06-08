@@ -6,6 +6,8 @@ const score = document.querySelector(".score");
 const message = document.querySelector(".message");
 let correct = document.querySelector(".correct");
 let cor = document.querySelector(".cor");
+const back = document.querySelector(".back");
+const skip = document.querySelector(".skip");
 
 const questions = {
   "1.Which of the following is used to request and load data Asynchronously?": [
@@ -39,6 +41,14 @@ const questions = {
     "It returns a reference to a variable in its parent scope",
   ],
   "6.HTML and CSS are not programming languages?": [["True", "False"], "True"],
+  "7.How many computer languages are there in use?": [
+    ["5000", "2000", "400", "Unknown"],
+    "2000",
+  ],
+  "7.Which of the following is not an early computer?": [
+    ["ENIAC", "SAGE", "NASA", "UNIVAC"],
+    "NASA",
+  ],
 };
 
 let scoreValue = 0;
@@ -75,7 +85,7 @@ function onOptionSelect(e) {
     clearIfCorrect();
     incrementScore();
     styleCorrectIfCorrect();
-    clearStyle1();
+    clearStyleIfCorrect();
     setTimeout(() => {
       loadNextQuestion();
     }, 1200);
@@ -83,10 +93,13 @@ function onOptionSelect(e) {
     correctOne();
     clearCorrect();
     styleCorrectIfWrong();
-    clearStyle2();
+    clearStyleIfWrong();
     setTimeout(() => {
       loadNextQuestion();
     }, 3000);
+    goBack();
+    loadNextQuestion();
+    clearGoBack();
   }
 }
 
@@ -108,7 +121,20 @@ function styleCorrectIfWrong() {
   correct.style.height = "10vh";
   correct.style.color = "red";
 }
+//Clear styles
 
+function clearStyleIfCorrect() {
+  setTimeout(() => {
+    correct.style.background = "";
+    correct.style.height = "";
+  }, 1200);
+}
+function clearStyleIfWrong() {
+  setTimeout(() => {
+    correct.style.background = "";
+    correct.style.height = "";
+  }, 3000);
+}
 //Display correct answer if answer is wrong
 
 function correctOne() {
@@ -143,6 +169,28 @@ function loadNextQuestion() {
     hideMessage();
   }
 }
+
+//Go back
+
+function goBack() {
+  let questionDisplayed = question.textContent;
+  let questionArray = Object.keys(questions);
+  let currentQuestionIndex = questionArray.indexOf(questionDisplayed);
+  let prevIndex = currentQuestionIndex - 1;
+  if (prevIndex < questionArray.length) {
+    let prevQuestion = questionArray[prevIndex];
+    question.textContent = prevQuestion;
+    loadOptions(prevQuestion);
+  } else if (prevIndex <= 1) {
+    options.innerHTML = "";
+    loadFirstQuestion();
+  }
+
+  back.style.display = "flex";
+}
+
+back.addEventListener("click", goBack);
+
 
 //Load options for each question
 
@@ -192,4 +240,10 @@ function clearIfCorrect() {
   setTimeout(() => {
     correct.innerHTML = "";
   }, 1200);
+}
+
+function clearGoBack() {
+  setTimeout(() => {
+    back.style.display = "none";
+  }, 6000);
 }
