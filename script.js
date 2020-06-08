@@ -8,6 +8,9 @@ let correct = document.querySelector(".correct");
 let cor = document.querySelector(".cor");
 const back = document.querySelector(".back");
 const skip = document.querySelector(".skip");
+const outof = document.querySelector(".outof");
+let scoreValue = 0;
+let outofValue = 0;
 
 const questions = {
   "1.What does HTML stand for?": [
@@ -286,11 +289,10 @@ const questions = {
   ],
 };
 
-let scoreValue = 0;
-
 //Add Event Listener
 
 window.addEventListener("load", loadFirstQuestion);
+window.addEventListener("load", countQuestions);
 options.addEventListener("click", onOptionSelect);
 
 //Load first question and options on page load
@@ -319,6 +321,8 @@ function onOptionSelect(e) {
     gotIt();
     clearIfCorrect();
     incrementScore();
+    setInterval();
+    countQuestions();
     styleCorrectIfCorrect();
     clearStyleIfCorrect();
     setTimeout(() => {
@@ -327,6 +331,7 @@ function onOptionSelect(e) {
   } else {
     correctOne();
     clearCorrect();
+    countQuestions();
     styleCorrectIfWrong();
     clearStyleIfWrong();
     setTimeout(() => {
@@ -441,6 +446,7 @@ back.addEventListener("click", goBack);
 
 function skipQuestion() {
   skip.addEventListener("click", loadNextQuestion);
+  skip.addEventListener("click", countQuestions);
 }
 
 skipQuestion();
@@ -480,4 +486,11 @@ function clearIfCorrect() {
   setTimeout(() => {
     correct.innerHTML = "";
   }, 1200);
+}
+
+//count questions upwards
+
+function countQuestions() {
+  outofValue++;
+  outof.textContent = outofValue;
 }
