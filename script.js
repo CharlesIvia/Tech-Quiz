@@ -93,12 +93,12 @@ const questions = {
 
   "16.What is the correct HTML for creating a hyperlink?": [
     [
-      "<a href='http://tech quiz.com'>Tech Quiz</a> ",
-      "<a name='http://www.w3schools.com'>W3Schools.com</a>",
-      "<a url='http://www.w3schools.com'>W3Schools.com</a>",
-      "<a>http://www.w3schools.com</a>",
+      "<a href='http://www.tq.io'>TQ</a> ",
+      "<a name='http://tq.io'>TQ</a>",
+      "<a url='http://tq.io'>TQ</a>",
+      "<a>http://www.tq.io</a>",
     ],
-    "<a href='http://tech quiz.com'>Tech Quiz</a> ",
+    "<a href='http://www.tq.io'>TQ</a> ",
   ],
 
   "17.Which character is used to indicate an end tag?": [
@@ -163,12 +163,12 @@ const questions = {
 
   "27.What is the correct HTML for inserting an image?": [
     [
-      "<img src=image.gif' alt='MyImage'> ",
+      "<img src='image.gif' alt='MyImage'> ",
       "<image src='image.gif' alt='MyImage'>",
       "<img href='image.gif' alt='MyImage'>",
       "<img alt='MyImage'>image.gif</img>",
     ],
-    "<img src=image.gif' alt='MyImage'> ",
+    "<img src='image.gif' alt='MyImage'> ",
   ],
   "28.What is the correct HTML for inserting a background image?": [
     [
@@ -339,7 +339,7 @@ function onOptionSelect(e) {
 //Approve answer
 
 function gotIt() {
-  correct.innerHTML = "Correct!";
+  correct.textContent = "Correct!";
 }
 
 //Style correct Answers components
@@ -374,7 +374,7 @@ function correctOne() {
   let questionDis = question.textContent;
   let correctAnw = questions[questionDis][1];
 
-  correct.innerHTML = `The correct answer is: ${correctAnw}`;
+  correct.textContent = `The correct answer is: ${correctAnw}`;
 }
 
 //Load next question
@@ -427,8 +427,7 @@ function goBack() {
     let prevQuestion = questionArray[prevIndex];
     question.textContent = prevQuestion;
     loadOptions(prevQuestion);
-  } else if (prevIndex <= 1) {
-    options.innerHTML = "";
+  } else {
     loadFirstQuestion();
   }
 
