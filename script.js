@@ -10,10 +10,15 @@ const back = document.querySelector(".back");
 const skip = document.querySelector(".skip");
 
 const questions = {
-  "1.Which of the following is used to request and load data Asynchronously?": [
-    ["SQL", "Ajax", "JSON", "Bootstrap"],
-    "Ajax",
+  "1.What does HTML stand for?": [
+    [
+      "Hyperlinks and Text Markup Language",
+      "Home Tool Markup Language",
+      "Hyper Text Markup Language",
+    ],
+    "Hyper Text Markup Language",
   ],
+
   "2.Which of the following is not an inbuilt array function in JavaScript?": [
     ["filter", "forEach", "map", "set"],
     "set",
@@ -50,13 +55,9 @@ const questions = {
     "NASA",
   ],
 
-  "9.What does HTML stand for?": [
-    [
-      "Hyperlinks and Text Markup Language",
-      "Home Tool Markup Language",
-      "Hyper Text Markup Language",
-    ],
-    "Hyper Text Markup Language",
+  "9.Which of the following is used to request and load data Asynchronously?": [
+    ["SQL", "Ajax", "JSON", "Bootstrap"],
+    "Ajax",
   ],
 
   "10. Who is making the Web standards?": [
