@@ -55,7 +55,7 @@ let scoreValue = 0;
 
 //Add Event Listener
 
-document.addEventListener("DOMContentLoaded", loadFirstQuestion);
+window.addEventListener("load", loadFirstQuestion);
 options.addEventListener("click", onOptionSelect);
 
 //Load first question and options on page load
