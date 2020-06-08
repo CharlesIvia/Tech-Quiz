@@ -206,16 +206,16 @@ const questions = {
 
   "34.Which HTML element is used to specify a footer for a document or section?": [
     ["<footer>", "<section>", "<bottom>"],
-    "<footer",
+    "<footer>",
   ],
 
   "35.In HTML, you can embed SVG elements directly into an HTML page.": [
     ["False ", "True"],
-    "False",
+    "True",
   ],
 
   "36.What is the correct HTML element for playing video files?": [
-    ["<media> ", "<video> ", "<movie>"],
+    ["<media> ", "<video>", "<movie>"],
     "<video>",
   ],
 
