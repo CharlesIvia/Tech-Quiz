@@ -190,7 +190,13 @@ function goBack() {
 }
 
 back.addEventListener("click", goBack);
+//Skip question
 
+function skipQuestion() {
+  skip.addEventListener("click", loadNextQuestion);
+}
+
+skipQuestion();
 
 //Load options for each question
 
