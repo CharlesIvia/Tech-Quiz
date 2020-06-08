@@ -8,7 +8,7 @@ let correct = document.querySelector(".correct");
 let cor = document.querySelector(".cor");
 const back = document.querySelector(".back");
 const skip = document.querySelector(".skip");
-const outof = document.querySelector(".outof");
+const questionNumber = document.querySelector(".outof");
 let scoreValue = 0;
 let outofValue = 0;
 
@@ -117,7 +117,7 @@ const questions = {
     ],
     "<a href='url' target='_blank'>",
   ],
-  "20.Which of these elements are all <table> elements?": [
+  "19.Which of these elements are all <table> elements?": [
     [
       "<table><tr><td>",
       "<table><head><tfoot>",
@@ -127,17 +127,17 @@ const questions = {
     "<table><tr><td>",
   ],
 
-  "21.Inline elements are normally displayed without starting a new line.": [
+  "20.Inline elements are normally displayed without starting a new line.": [
     ["True", "False"],
     "True",
   ],
 
-  "22.How can you make a numbered list?": [
+  "21.How can you make a numbered list?": [
     ["<ol> ", "<dl>", "<list>", "<ul>"],
     "<ol> ",
   ],
 
-  "23.How can you make a bulleted list?": [
+  "22.How can you make a bulleted list?": [
     ["<ul> ", "<dl>", "<ol>", "<list>"],
     "<ul> ",
   ],
@@ -400,6 +400,7 @@ function loadNextQuestion() {
     }, 3000);
     options.innerHTML = "";
     loadFirstQuestion();
+    clearQuestionCount();
     let messageString =
       "You scored:" + `${lastScore}` + "/" + `${questionArray.length}`;
     message.textContent = messageString;
@@ -492,12 +493,19 @@ function clearIfCorrect() {
 
 function countQuestions() {
   outofValue++;
-  outof.textContent = outofValue;
+  questionNumber.textContent = outofValue;
 }
 
 //Count downwards
 
 function countQuestionsDownwards() {
   outofValue--;
-  outof.textContent = outofValue;
+  questionNumber.textContent = outofValue;
+}
+
+//Clear question count
+
+function clearQuestionCount() {
+  outofValue = 00;
+  questionNumber.textContent = outofValue;
 }
